@@ -1,0 +1,53 @@
+@model ProjetoLoja.Models.Pedido
+
+@{
+    ViewData["Title"] = "Editar Pedido";
+}
+
+<h1>Editar Pedido</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label asp-for="ClienteId"></label>
+        <input asp-for="ClienteId" />
+        <span asp-validation-for="ClienteId"></span>
+    </div>
+
+    <div>
+        <label asp-for="Data"></label>
+        <input asp-for="Data" type="datetime-local" />
+    </div>
+
+    <div>
+        <label asp-for="ValorTotal"></label>
+        <input asp-for="ValorTotal" />
+    </div>
+
+    <div>
+        <label asp-for="Status"></label>
+        <input asp-for="Status" />
+    </div>
+
+    <div>
+        <label asp-for="Observacao"></label>
+        <input asp-for="Observacao" />
+    </div>
+
+    <br />
+
+    <button type="submit">Salvar alterações</button>
+
+</form>
+
+<p>
+    <a asp-action="Index">Voltar para lista</a>
+</p>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

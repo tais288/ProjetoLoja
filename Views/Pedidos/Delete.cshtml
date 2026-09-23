@@ -1,0 +1,27 @@
+@model ProjetoLoja.Models.Pedido
+
+@{
+    ViewData["Title"] = "Excluir Pedido";
+}
+
+<h1>Excluir Pedido</h1>
+
+<h3>Tem certeza que deseja excluir este pedido?</h3>
+
+<div>
+    <p><strong>Cliente ID:</strong> @Model.ClienteId</p>
+    <p><strong>Data:</strong> @Model.Data</p>
+    <p><strong>Valor Total:</strong> @Model.ValorTotal</p>
+    <p><strong>Status:</strong> @Model.Status</p>
+    <p><strong>Observação:</strong> @Model.Observacao</p>
+</div>
+
+<form asp-action="Delete" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit">Excluir</button>
+
+    <a asp-action="Index">Cancelar</a>
+
+</form>

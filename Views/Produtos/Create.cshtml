@@ -1,0 +1,52 @@
+@model ProjetoLoja.Models.Produto
+
+@{
+    ViewData["Title"] = "Cadastrar Produto";
+}
+
+<h1>Cadastrar Produto</h1>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" />
+        <span asp-validation-for="Nome"></span>
+    </div>
+
+    <div>
+        <label asp-for="Descricao"></label>
+        <input asp-for="Descricao" />
+    </div>
+
+    <div>
+        <label asp-for="Preco"></label>
+        <input asp-for="Preco" />
+        <span asp-validation-for="Preco"></span>
+    </div>
+
+    <div>
+        <label asp-for="Estoque"></label>
+        <input asp-for="Estoque" />
+    </div>
+
+    <div>
+        <label asp-for="Categoria"></label>
+        <input asp-for="Categoria" />
+    </div>
+
+    <br />
+
+    <button type="submit">Cadastrar</button>
+
+</form>
+
+<p>
+    <a asp-action="Index">Voltar para lista</a>
+</p>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

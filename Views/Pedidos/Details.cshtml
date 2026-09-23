@@ -1,0 +1,20 @@
+@model ProjetoLoja.Models.Pedido
+
+@{
+    ViewData["Title"] = "Detalhes do Pedido";
+}
+
+<h1>Detalhes do Pedido</h1>
+
+<div>
+    <p><strong>Cliente ID:</strong> @Model.ClienteId</p>
+    <p><strong>Data:</strong> @Model.Data</p>
+    <p><strong>Valor Total:</strong> @Model.ValorTotal</p>
+    <p><strong>Status:</strong> @Model.Status</p>
+    <p><strong>Observação:</strong> @Model.Observacao</p>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Voltar para lista</a>
+</p>
