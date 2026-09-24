@@ -217,3 +217,4 @@ C:\Users\tatap\OneDrive\ProjetoLoja\bin\Debug\net9.0\runtimes\win-x64\native\e_s
 C:\Users\tatap\OneDrive\ProjetoLoja\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\tatap\OneDrive\ProjetoLoja\obj\Debug\net9.0\ProjetoLoja.csproj.AssemblyReference.cache
 C:\Users\tatap\OneDrive\ProjetoLoja\obj\Debug\net9.0\ProjetoL.69F05880.Up2Date
+C:\Users\tatap\OneDrive\ProjetoLoja\obj\Debug\net9.0\ProjetoLoja.sourcelink.json
