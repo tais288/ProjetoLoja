@@ -4,24 +4,12 @@
     ViewData["Title"] = "Excluir Pedido";
 }
 
-<h1>Excluir Pedido</h1>
-
-<h3>Tem certeza que deseja excluir este pedido?</h3>
-
-<div>
-    <p><strong>Cliente ID:</strong> @Model.ClienteId</p>
-    <p><strong>Data:</strong> @Model.Data</p>
-    <p><strong>Valor Total:</strong> @Model.ValorTotal</p>
-    <p><strong>Status:</strong> @Model.Status</p>
-    <p><strong>Observação:</strong> @Model.Observacao</p>
-</div>
-
-<form asp-action="Delete" method="post">
-
+<div class="page-heading"><div><a class="back-link" asp-controller="Home" asp-action="Index">← Voltar para início</a><div class="eyebrow">Vendas</div><h1>Excluir pedido</h1><p>Esta ação não poderá ser desfeita.</p></div></div>
+<div class="delete-shell">
+    <h2>Tem certeza que deseja excluir este pedido?</h2>
+    <p>O pedido do cliente <strong>#@Model.ClienteId</strong> será removido.</p>
+    <form asp-action="Delete" method="post">
     <input type="hidden" asp-for="Id" />
-
-    <button type="submit">Excluir</button>
-
-    <a asp-action="Index">Cancelar</a>
-
-</form>
+    <div class="form-actions"><button class="btn btn-danger" type="submit">Excluir pedido</button><a class="btn btn-outline-secondary" asp-action="Index">Cancelar</a></div>
+    </form>
+</div>

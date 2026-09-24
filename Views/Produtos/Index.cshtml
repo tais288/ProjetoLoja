@@ -4,13 +4,18 @@
     ViewData["Title"] = "Produtos";
 }
 
-<h1>Produtos</h1>
+<div class="page-heading">
+    <div>
+        <a class="back-link" asp-controller="Home" asp-action="Index">← Voltar para início</a>
+        <div class="eyebrow">Catálogo</div>
+        <h1>Produtos</h1>
+        <p>Acompanhe seu catálogo e mantenha o estoque sob controle.</p>
+    </div>
+    <a class="btn btn-primary" asp-action="Create">+ Novo produto</a>
+</div>
 
-<p>
-    <a asp-action="Create">Cadastrar novo produto</a>
-</p>
-
-<table>
+<div class="table-shell table-responsive">
+<table class="table app-table">
     <thead>
         <tr>
             <th>Nome</th>
@@ -26,17 +31,18 @@
         @foreach (var produto in Model)
         {
             <tr>
-                <td>@produto.Nome</td>
-                <td>@produto.Descricao</td>
-                <td>@produto.Preco</td>
-                <td>@produto.Estoque</td>
-                <td>@produto.Categoria</td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@produto.Id">Detalhes</a> |
-                    <a asp-action="Edit" asp-route-id="@produto.Id">Editar</a> |
-                    <a asp-action="Delete" asp-route-id="@produto.Id">Excluir</a>
+                <td class="table-primary-text">@produto.Nome</td>
+                <td class="table-muted">@produto.Descricao</td>
+                <td class="table-primary-text">@produto.Preco</td>
+                <td class="table-muted">@produto.Estoque</td>
+                <td class="table-muted">@produto.Categoria</td>
+                <td class="table-actions">
+                    <a asp-action="Details" asp-route-id="@produto.Id">Ver</a>
+                    <a asp-action="Edit" asp-route-id="@produto.Id">Editar</a>
+                    <a class="danger-link" asp-action="Delete" asp-route-id="@produto.Id">Excluir</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+</div>

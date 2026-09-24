@@ -4,47 +4,24 @@
     ViewData["Title"] = "Editar Pedido";
 }
 
-<h1>Editar Pedido</h1>
-
-<form asp-action="Edit" method="post">
+<div class="page-heading"><div><a class="back-link" asp-controller="Home" asp-action="Index">← Voltar para início</a><div class="eyebrow">Vendas</div><h1>Editar pedido</h1><p>Atualize os dados e o andamento desta venda.</p></div></div>
+<div class="form-shell"><form asp-action="Edit" method="post"><div class="form-grid">
 
     <input type="hidden" asp-for="Id" />
 
-    <div>
-        <label asp-for="ClienteId"></label>
-        <input asp-for="ClienteId" />
-        <span asp-validation-for="ClienteId"></span>
+    <div class="form-group"><label class="form-label" asp-for="ClienteId"></label><input class="form-control" asp-for="ClienteId" /><span class="validation-error" asp-validation-for="ClienteId"></span>
     </div>
-
-    <div>
-        <label asp-for="Data"></label>
-        <input asp-for="Data" type="datetime-local" />
+    <div class="form-group"><label class="form-label" asp-for="Data"></label><input class="form-control" asp-for="Data" type="datetime-local" />
     </div>
-
-    <div>
-        <label asp-for="ValorTotal"></label>
-        <input asp-for="ValorTotal" />
+    <div class="form-group"><label class="form-label" asp-for="ValorTotal"></label><input class="form-control" asp-for="ValorTotal" />
     </div>
-
-    <div>
-        <label asp-for="Status"></label>
-        <input asp-for="Status" />
+    <div class="form-group"><label class="form-label" asp-for="Status"></label><input class="form-control" asp-for="Status" />
     </div>
-
-    <div>
-        <label asp-for="Observacao"></label>
-        <input asp-for="Observacao" />
+    <div class="form-group full"><label class="form-label" asp-for="Observacao"></label><input class="form-control" asp-for="Observacao" />
     </div>
-
-    <br />
-
-    <button type="submit">Salvar alterações</button>
-
+    </div><div class="form-actions"><button class="btn btn-primary" type="submit">Salvar alterações</button><a class="btn btn-outline-secondary" asp-action="Index">Cancelar</a></div>
 </form>
-
-<p>
-    <a asp-action="Index">Voltar para lista</a>
-</p>
+</div>
 
 @section Scripts {
     @{

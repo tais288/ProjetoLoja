@@ -4,13 +4,18 @@
     ViewData["Title"] = "Pedidos";
 }
 
-<h1>Pedidos</h1>
+<div class="page-heading">
+    <div>
+        <a class="back-link" asp-controller="Home" asp-action="Index">← Voltar para início</a>
+        <div class="eyebrow">Vendas</div>
+        <h1>Pedidos</h1>
+        <p>Acompanhe os pedidos e o andamento de cada venda.</p>
+    </div>
+    <a class="btn btn-primary" asp-action="Create">+ Novo pedido</a>
+</div>
 
-<p>
-    <a asp-action="Create">Cadastrar novo pedido</a>
-</p>
-
-<table>
+<div class="table-shell table-responsive">
+<table class="table app-table">
     <thead>
         <tr>
             <th>Cliente ID</th>
@@ -26,17 +31,18 @@
         @foreach (var pedido in Model)
         {
             <tr>
-                <td>@pedido.ClienteId</td>
-                <td>@pedido.Data</td>
-                <td>@pedido.ValorTotal</td>
-                <td>@pedido.Status</td>
-                <td>@pedido.Observacao</td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@pedido.Id">Detalhes</a> |
-                    <a asp-action="Edit" asp-route-id="@pedido.Id">Editar</a> |
-                    <a asp-action="Delete" asp-route-id="@pedido.Id">Excluir</a>
+                <td class="table-primary-text">#@pedido.ClienteId</td>
+                <td class="table-muted">@pedido.Data</td>
+                <td class="table-primary-text">@pedido.ValorTotal</td>
+                <td><span class="status-badge">@pedido.Status</span></td>
+                <td class="table-muted">@pedido.Observacao</td>
+                <td class="table-actions">
+                    <a asp-action="Details" asp-route-id="@pedido.Id">Ver</a>
+                    <a asp-action="Edit" asp-route-id="@pedido.Id">Editar</a>
+                    <a class="danger-link" asp-action="Delete" asp-route-id="@pedido.Id">Excluir</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+</div>

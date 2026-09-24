@@ -4,17 +4,14 @@
     ViewData["Title"] = "Detalhes do Produto";
 }
 
-<h1>Detalhes do Produto</h1>
-
-<div>
-    <p><strong>Nome:</strong> @Model.Nome</p>
-    <p><strong>Descrição:</strong> @Model.Descricao</p>
-    <p><strong>Preço:</strong> @Model.Preco</p>
-    <p><strong>Estoque:</strong> @Model.Estoque</p>
-    <p><strong>Categoria:</strong> @Model.Categoria</p>
+<div class="page-heading"><div><a class="back-link" asp-controller="Home" asp-action="Index">← Voltar para início</a><div class="eyebrow">Catálogo</div><h1>Detalhes do produto</h1><p>Confira as informações deste item.</p></div></div>
+<div class="detail-shell">
+    <dl class="detail-list">
+        <div class="detail-item"><dt>Nome</dt><dd>@Model.Nome</dd></div>
+        <div class="detail-item"><dt>Descrição</dt><dd>@Model.Descricao</dd></div>
+        <div class="detail-item"><dt>Preço</dt><dd>@Model.Preco</dd></div>
+        <div class="detail-item"><dt>Estoque</dt><dd>@Model.Estoque</dd></div>
+        <div class="detail-item"><dt>Categoria</dt><dd>@Model.Categoria</dd></div>
+    </dl>
+    <div class="form-actions"><a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Editar produto</a><a class="btn btn-outline-secondary" asp-action="Index">Voltar</a></div>
 </div>
-
-<p>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
-    <a asp-action="Index">Voltar para lista</a>
-</p>

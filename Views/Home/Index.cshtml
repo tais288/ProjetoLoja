@@ -2,22 +2,53 @@
     ViewData["Title"] = "Projeto Loja";
 }
 
-<h1>Projeto Loja</h1>
+<div class="home-hero">
+    <section class="hero-copy">
+        <div class="hero-kicker">Painel de gestão</div>
+        <h1>Uma operação mais simples, todos os dias.</h1>
+        <p>Organize clientes, produtos e pedidos em um só lugar, com clareza para decidir e agilidade para agir.</p>
+        <p class="team-highlight">Projeto desenvolvido por Christian, Davi, Taís e Vinícius.</p>
+        <div class="home-actions">
+            <a class="btn btn-primary" asp-controller="Clientes" asp-action="Index">Ver clientes</a>
+            <a class="btn btn-light" asp-controller="Produtos" asp-action="Index">Ver produtos</a>
+            <a class="btn btn-outline-light" asp-controller="Pedidos" asp-action="Index">Ver pedidos</a>
+        </div>
+    </section>
+    <section class="quick-panel">
+        <div>
+            <div class="eyebrow">Atalhos</div>
+            <h2>Acesse uma área</h2>
+        </div>
+        <div>
+            <a class="quick-link" asp-controller="Clientes" asp-action="Index">Clientes <span>→</span></a>
+            <a class="quick-link" asp-controller="Produtos" asp-action="Index">Produtos <span>→</span></a>
+            <a class="quick-link" asp-controller="Pedidos" asp-action="Index">Pedidos <span>→</span></a>
+        </div>
+    </section>
+</div>
 
-<p>Bem-vindo ao sistema de gerenciamento da loja!</p>
+<div class="stat-grid">
+    <a class="stat-card" asp-controller="Clientes" asp-action="Index">
+        <div class="stat-label">Relacionamento</div>
+        <div class="stat-value">Clientes</div>
+    </a>
+    <a class="stat-card" asp-controller="Produtos" asp-action="Index">
+        <div class="stat-label">Catálogo</div>
+        <div class="stat-value">Produtos</div>
+    </a>
+    <a class="stat-card" asp-controller="Pedidos" asp-action="Index">
+        <div class="stat-label">Vendas</div>
+        <div class="stat-value">Pedidos</div>
+    </a>
+</div>
 
-<h2>Menu</h2>
-
-<ul>
-    <li>
-        <a asp-controller="Clientes" asp-action="Index">Clientes</a>
-    </li>
-
-    <li>
-        <a asp-controller="Produtos" asp-action="Index">Produtos</a>
-    </li>
-
-    <li>
-        <a asp-controller="Pedidos" asp-action="Index">Pedidos</a>
-    </li>
-</ul>
+<section class="team-section">
+    <div class="eyebrow">Equipe do projeto</div>
+    <h2>Integrantes</h2>
+    <div class="team-grid">
+        <div class="team-member"><span class="member-avatar">C</span><span>Christian</span></div>
+        <div class="team-member"><span class="member-avatar">D</span><span>Davi</span></div>
+        <div class="team-member"><span class="member-avatar">T</span><span>Taís</span></div>
+        <div class="team-member"><span class="member-avatar">V</span><span>Vinícius</span></div>
+    </div>
+</section>

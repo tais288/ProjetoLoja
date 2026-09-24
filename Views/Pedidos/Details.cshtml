@@ -4,17 +4,14 @@
     ViewData["Title"] = "Detalhes do Pedido";
 }
 
-<h1>Detalhes do Pedido</h1>
-
-<div>
-    <p><strong>Cliente ID:</strong> @Model.ClienteId</p>
-    <p><strong>Data:</strong> @Model.Data</p>
-    <p><strong>Valor Total:</strong> @Model.ValorTotal</p>
-    <p><strong>Status:</strong> @Model.Status</p>
-    <p><strong>Observação:</strong> @Model.Observacao</p>
+<div class="page-heading"><div><a class="back-link" asp-controller="Home" asp-action="Index">← Voltar para início</a><div class="eyebrow">Vendas</div><h1>Detalhes do pedido</h1><p>Confira os dados e o status desta venda.</p></div></div>
+<div class="detail-shell">
+    <dl class="detail-list">
+        <div class="detail-item"><dt>Cliente ID</dt><dd>#@Model.ClienteId</dd></div>
+        <div class="detail-item"><dt>Data</dt><dd>@Model.Data</dd></div>
+        <div class="detail-item"><dt>Valor total</dt><dd>@Model.ValorTotal</dd></div>
+        <div class="detail-item"><dt>Status</dt><dd><span class="status-badge">@Model.Status</span></dd></div>
+        <div class="detail-item"><dt>Observação</dt><dd>@Model.Observacao</dd></div>
+    </dl>
+    <div class="form-actions"><a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Editar pedido</a><a class="btn btn-outline-secondary" asp-action="Index">Voltar</a></div>
 </div>
-
-<p>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
-    <a asp-action="Index">Voltar para lista</a>
-</p>
