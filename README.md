@@ -29,6 +29,6 @@ Cada cadastro permite realizar as operações de:
 ## Integrantes
 
 - Christian Matheus Oliveira Chaves
-- Davi Isoldi Basíli
+- Davi Isoldi Basílio
 - Taís Pardini Prates
 - Vinícius Siqueira Cardoso
